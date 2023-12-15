@@ -4,12 +4,14 @@ import { NavigationContainer } from '@react-navigation/native'
 import HomePage from './HomePage'
 import Checklist from './Checklist'
 import Icon from 'react-native-ionicons'
+import SignupForm from './SignupForm'
+import NFCtools from './NFCtools'
 
 const Drawer = createDrawerNavigator();
 
 function DrawerNavigation() {
   return (
-    <NavigationContainer>
+    
     <Drawer.Navigator >
     <Drawer.Screen name="Account" component={Checklist} 
       options={{
@@ -46,7 +48,7 @@ function DrawerNavigation() {
         ),
      }} 
       />
-      <Drawer.Screen name="Add User" component={Checklist} 
+      <Drawer.Screen name="Add User" component={SignupForm} 
       options={{
         title: 'Add user',
         drawerIcon: ({focused, size}) => (
@@ -58,7 +60,19 @@ function DrawerNavigation() {
         ),
      }} 
       />
-      <Drawer.Screen name="LogOut" component={Checklist} 
+      <Drawer.Screen name="Settings" component={NFCtools} 
+      options={{
+        title: 'Settings',
+        drawerIcon: ({focused, size}) => (
+           <Icon
+              name="person-add"
+              size={size}
+              color={focused ? '#7cc' : '#ccc'}
+           />
+        ),
+     }} 
+      />
+      <Drawer.Screen name="LogOut" component={HomePage} 
       options={{
         title: 'LogOut',
         drawerIcon: ({focused, size}) => (
@@ -71,7 +85,7 @@ function DrawerNavigation() {
      }} 
       />
     </Drawer.Navigator>
-    </NavigationContainer>
+    
   )
 }
 

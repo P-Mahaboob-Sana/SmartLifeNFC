@@ -5,11 +5,17 @@ import DrawerNavigation from './components/DrawerNavigation'
 import HomePage from './components/HomePage'
 import TabBar from './components/TabBar'
 import { NavigationContainer } from '@react-navigation/native'
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
+import NFCtools from './components/NFCtools'
 
 const App =()=>{
   
   return (
-<DrawerNavigation/>
+    <NavigationContainer>
+      <DrawerNavigation/>
+     {/* <NFCtools/> */}
+      {/* <Checklist /> */}
+    </NavigationContainer>
   );
 
 }
